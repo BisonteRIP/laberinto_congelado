@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+</html>
+<body>
+  <div class="container">
+    <header>
+      <h1>🌌 Laberinto Congelado</h1>
+      <p class="subtitle">
+        Navegador de Portales Intergalácticos - BFS Pathfinder
+      </p>
+    </header>
+
+    <div class="selection-panel">
+      <div class="panel">
+        <h2>Punto de Partida</h2>
+        <div class="select-group">
+          <label for="start-galaxy">Galaxia de Origen:</label>
+          <select id="start-galaxy">
+            <option value="">Selecciona una galaxia...</option>
+          </select>
+        </div>
+        <div class="select-group">
+          <label for="start-site">Site de Origen:</label>
+          <select id="start-site">
+            <option value="">Primero selecciona una galaxia</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Destino Final</h2>
+        <div class="select-group">
+          <label for="end-galaxy">Galaxia de Destino:</label>
+          <select id="end-galaxy">
+            <option value="">Selecciona una galaxia...</option>
+          </select>
+        </div>
+        <div class="select-group">
+          <label for="end-site">Site de Destino:</label>
+          <select id="end-site">
+            <option value="">Primero selecciona una galaxia</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="find-path">🔍 Encontrar Ruta Más Corta</button>
+    </div>
+
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Calculando ruta óptima mediante BFS...</p>
+    </div>
+
+    <div class="results" id="results">
+      <h2>✨ Ruta Encontrada</h2>
+
+      <div class="path-info">
+        <p><strong>Origen:</strong> <span id="origin-display"></span></p>
+        <p><strong>Destino:</strong> <span id="destination-display"></span></p>
+      </div>
+
+      <div class="path-stats">
+        <div class="stat">
+          <div class="stat-value" id="total-jumps">0</div>
+          <div class="stat-label">Saltos Totales</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="path-time">0</div>
+          <div class="stat-label">Tiempo Estimado</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="portal-count">0</div>
+          <div class="stat-label">Portales Usados</div>
+        </div>
+      </div>
+
+      <div class="portal-path" id="portal-path">
+        <!-- Los pasos se insertarán aquí -->
+      </div>
+    </div>
+  </div>
+  <script src="/main.js"></script>
+</body>
